@@ -4,6 +4,9 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="">
     <link rel="stylesheet" href="<?= CSS_DIR ?>bootstrap.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>tool-custom-bootstrap.css" media="all">
+    <link rel="stylesheet" href="<?= CSS_DIR ?>magnific-popup.css" media="all">
+    <link rel="stylesheet" href="<?= CSS_DIR ?>global.css" media="all">
+    <link rel="stylesheet" href="<?= CSS_DIR ?>back.css" media="all">
     <meta name="description" content=""/>
     <title>Qcschina</title>
 </head>
@@ -11,7 +14,7 @@
     <div class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <a href="../" class="navbar-brand">Qcschina Admin</a>
+                <a href="<?= BASE_URL_ADMIN ?>" class="navbar-brand">Qcschina Admin</a>
                 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -20,6 +23,14 @@
             </div>
         </div>
     </div>
+    <div class="panel panel-default col-md-2 vertical-center shadow loading-ajax" style="display: none;">
+        <div class="thumbnail border-none margin-0 loader">
+            <img src="<?= BASE_URL ?>/img/loader.gif" title="Loading" alt="Loading"/> 
+        </div>
+        <span class="text">Saving</span>
+    </div>
+    <div class="panel panel-success col-md-2 vertical-center shadow confirm" style="display: none;">
+        <span class="glyphicon glyphicon-ok font-size-30 color-green"></span> <span class="text">Saved</span>
+    </div>
     <div class="container">
-        header
 

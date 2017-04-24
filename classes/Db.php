@@ -14,11 +14,7 @@
 class Db {
 
     public static function getInstance() {
-        try {
-            $bdd = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASSWORD);
-        } catch (Exception $e) {
-            die('Erreur : ' . $e->getMessage());
-        }
+        $bdd = new MysqliDb (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         return $bdd;
     }
 

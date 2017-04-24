@@ -4,6 +4,7 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="">
     <link rel="stylesheet" href="<?= CSS_DIR ?>bootstrap.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>tool-custom-bootstrap.css" media="all">
+    <link rel="stylesheet" href="<?= CSS_DIR ?>global.css" media="all">
 <!--    <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;

@@ -18,4 +18,12 @@ $aRoutes = [
         'rule' => '/admin',
         'controller' => 'admin/controller/main'
     ],
+    [
+        'rule' => '/admin/edit-product',
+        'controller' => 'admin/controller/edit_product'
+    ],
+    [
+        'rule' => '/admin/ajax',
+        'controller' => 'admin/controller/ajax'
+    ],
 ];

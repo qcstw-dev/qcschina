@@ -13,32 +13,46 @@
  */
 class Product {
 
-    private $id;
-    private $title;
-    private $picture;
-    private $url;
+    public $id;
+    public $title;
+    public $picture;
+    public $url;
 
-    public function __construct($id = null) {
-        parent::__construct();
-        if ($id && is_int($id)) {
-            $query = $bdd->query(
-                    'SELECT *'
-                    . ' FROM product'
-                    . ' WHERE `id` = ' . $id
-            );
-            $aProduct = $query->fetch(PDO::FETCH_ASSOC);
+    public function __construct($id = null, $aProperties = []) {
+        if ($id) {
+            $oDb = Db::getInstance()->where ('id', $id);
+            $aProduct = $oDb->getOne('product');
+            
             foreach ($aProduct as $sKey => $sAttribute) {
                 $this->{$sKey} = $sAttribute;
             }
-        }
+        } 
     }
 
     public static function getAll() {
-        $query = Db::getInstance()->query(
-                'SELECT *'
-                . ' FROM product'
-        );
-        return $query->fetchAll(PDO::FETCH_ASSOC);
+        return Db::getInstance()->get('product');
+    }
+
+    public function update($aData) {
+        foreach ($aData as $key => $value) {
+            if (property_exists($this, $key)) {
+                $this->{$key} = $value;
+            }
+        }
+    }
+    public function setPicture($sPicture) {
+        $this->picture = $sPicture;
+    }
+
+    public function save() {
+        if ($this->id) {
+            return Db::getInstance()->update('product', (array) $this);
+        } else {
+            $id = Db::getInstance()->insert('product', (array) $this);
+            if ($id) {
+                $this->id = $id;
+            }
+        }
     }
 
 }
