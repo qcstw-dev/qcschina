@@ -3,6 +3,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.0, initial-scale=1.0" /> 
     <link rel="icon" type="image/vnd.microsoft.icon" href="">
     <link rel="stylesheet" href="<?= CSS_DIR ?>bootstrap.css" media="all">
+    <link rel="stylesheet" href="<?= CSS_DIR ?>tool-custom-bootstrap.css" media="all">
 <!--    <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -28,6 +29,33 @@
     <title>Qcschina</title>
 </head>
 <body>
+    <div class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="../" class="navbar-brand">Qcschina</a>
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Themes <span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="themes">
+                            <li><a href="">Default</a></li>
+                            <li class="divider"></li>
+                            <li><a href="">Test</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../help/">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="container">
-    header
+        header
 
