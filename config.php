@@ -8,6 +8,7 @@ define('CSS_DIR', BASE_URL . 'template/css/');
 define('JS_DIR', BASE_URL . 'template/js/');
 define('IMG_DIR', BASE_URL . 'img/');
 define('IMG_PRODUCTS_DIR', IMG_DIR.'products/');
+define('IMG_PRODUCTS_RELATIVE_DIR', 'img/products/');
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'qcschina');
 define('DB_USER', 'root');

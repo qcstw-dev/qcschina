@@ -18,15 +18,16 @@ class Product {
     public $picture;
     public $url;
 
-    public function __construct($id = null, $aProperties = []) {
+    public function __construct($id = null) {
         if ($id) {
-            $oDb = Db::getInstance()->where ('id', $id);
+            $oDb = Db::getInstance()->where('id', $id);
             $aProduct = $oDb->getOne('product');
-            
-            foreach ($aProduct as $sKey => $sAttribute) {
-                $this->{$sKey} = $sAttribute;
+            if ($aProduct) {
+                foreach ($aProduct as $sKey => $sProperty) {
+                    $this->{$sKey} = $sProperty;
+                }
             }
-        } 
+        }
     }
 
     public static function getAll() {
@@ -40,13 +41,32 @@ class Product {
             }
         }
     }
+
     public function setPicture($sPicture) {
         $this->picture = $sPicture;
     }
 
+    public function deletePicture() {
+        if ($this->picture && file_exists(IMG_PRODUCTS_RELATIVE_DIR . $this->picture)) {
+            unlink(IMG_PRODUCTS_RELATIVE_DIR . $this->picture);
+        }
+    }
+
+    public function delete() {
+        $db = Db::getInstance();
+        $db->where('id', $this->id);
+        $bIsDeleted = $db->delete('product');
+        if ($bIsDeleted) {
+            $this->deletePicture();
+        }
+        return $bIsDeleted;
+    }
+
     public function save() {
         if ($this->id) {
-            return Db::getInstance()->update('product', (array) $this);
+            $db = Db::getInstance();
+            $db->where ('id', $this->id);
+            return $db->update('product', (array) $this);
         } else {
             $id = Db::getInstance()->insert('product', (array) $this);
             if ($id) {

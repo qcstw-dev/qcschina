@@ -26,4 +26,8 @@ $aRoutes = [
         'rule' => '/admin/ajax',
         'controller' => 'admin/controller/ajax'
     ],
+    [
+        'rule' => '/admin/delete',
+        'controller' => 'admin/controller/delete'
+    ],
 ];
