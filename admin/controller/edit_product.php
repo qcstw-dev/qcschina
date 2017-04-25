@@ -1,11 +1,21 @@
 <?php
 
 include 'admin/template/header.php';
-
+$aWebsites = Website::getAll();
 $oProduct = null;
 if (isset($_POST) && $_POST) {
     $aResult = ['success' => true];
     $oProduct = new Product((isset($_POST['id_product']) && $_POST['id_product'] ? $_POST['id_product'] : null));
+    $oProduct->update($_POST);
+    $oProduct->save();
+    
+    // WEBSITES
+    foreach ($_POST as $key => $value) {
+        if (strpos($key, 'website_') !== false) {
+            $oProduct->updateStatusWebsite(str_replace('website_', '', $key), ($value == 'on' ? 1 : 0 ));
+        }
+    }
+    
     if (isset($_FILES) && $_FILES) {
         foreach ($_FILES as $file) {
             if ($file['error'] == 0) {
@@ -30,9 +40,8 @@ if (isset($_POST) && $_POST) {
                 }
             }
         }
+        $oProduct->save();
     }
-    $oProduct->update($_POST);
-    $oProduct->save();
 } else {
     if (isset($_GET['id_product']) && $_GET['id_product']) {
         $oProduct = new Product($_GET['id_product']);

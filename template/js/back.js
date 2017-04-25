@@ -1,8 +1,4 @@
 $(function () {
-//    $(document).on('click', '.btn-upload', function (e) {
-//        $('.fileupload').trigger('click');
-//    });
-
     $(document).on('change', ':file', function () {
         var input = $(this),
                 numFiles = input.get(0).files ? input.get(0).files.length : 1,
@@ -15,6 +11,62 @@ $(function () {
             $('.file-name').text(label);
         });
     });
+    $('.select-website').on('change', function () {
+        var data = {};
+        data['action'] = 'selectwebsite';
+        data['select'] = $(this).is(':checked') ? 1 : 0;
+        data['id_product'] = $(this).data('id-product');
+        data['id_website'] = $(this).data('id-website');
+        $.ajax({
+            type: 'POST',
+            url: baseUrlAdmin + 'ajax',
+            data: data,
+            dataType: 'json',
+            async: false,
+            beforeSend: function () {
+                loading('Saving...');
+            },
+            success: function (json) {
+                loading_hide();
+                if (json.success === true) {
+                    // append PICTURE
+                    confirm();
+
+                } else {
+                    if (json.error) {
+                        popupError(json.error);
+                    }
+                }
+            }
+        });
+    });
+//    var options = [];
+//
+//    $('.dropdown-menu a').on('click', function (event) {
+//        var $target = $(event.currentTarget),
+//                val = $target.attr('data-value'),
+//                $inp = $target.find('input'),
+//                idx;
+//
+//        if ((idx = options.indexOf(val)) > -1) {
+//            options.splice(idx, 1);
+//            setTimeout(function () {
+//                $inp.prop('checked', false)
+//            }, 0);
+//        } else {
+//            options.push(val);
+//            setTimeout(function () {
+//                $inp.prop('checked', true)
+//            }, 0);
+//        }
+//
+//        $(event.target).blur();
+//
+//        return false;
+//    });
+//    $(document).on('click', '.btn-upload', function (e) {
+//        $('.fileupload').trigger('click');
+//    });
     /* limit = 1;
      $('.fileupload').fileupload({
      dataType: 'json',

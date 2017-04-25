@@ -1,5 +1,4 @@
 <?php
-
 if (!isset($_POST['action']) || !$_POST['action']) {
     echo json_encode(['error' => 'Error ajax, action not defined']);
 } else {
@@ -40,8 +39,14 @@ if (!isset($_POST['action']) || !$_POST['action']) {
                 $aResult['error'] = 'Error: information missing';
             }
             break;
-        case 'deletepicture':
-
+        case 'selectwebsite':
+            if (isset($_POST['id_product'], $_POST['id_website'], $_POST['select']) 
+                    && $_POST['id_product'] && $_POST['id_website']) {
+                $oProduct = new Product($_POST['id_product']);
+                $oProduct->updateStatusWebsite($_POST['id_website'], $_POST['select']);
+            } else {
+                $aResult['error'] = 'Error: information missing';
+            }
 
             break;
 

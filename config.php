@@ -1,6 +1,7 @@
 <?php
 
 //phpinfo();die;
+define('SITE_TITLE', 'Qcschina');
 define('BASE_PATH', ($_SERVER['HTTP_HOST'] == 'localhost' ? '/qcschina' : '/'));
 define('BASE_URL', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . BASE_PATH . '/');
 define('BASE_URL_ADMIN', BASE_URL.'admin/');
@@ -17,6 +18,7 @@ define('DB_PASSWORD', '');
 require_once('classes/MysqliDb.php');
 require_once('classes/Db.php');
 require_once('classes/Product.php');
+require_once('classes/Website.php');
 
 // ROUTING
 include 'dispatcher.php';

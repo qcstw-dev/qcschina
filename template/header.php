@@ -33,7 +33,7 @@
     <div class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <a href="../" class="navbar-brand">Qcschina</a>
+                <a href="../" class="navbar-brand"><?= SITE_TITLE ?></a>
                 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -43,7 +43,7 @@
             <div class="navbar-collapse collapse" id="navbar-main">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Themes <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Home <span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="themes">
                             <li><a href="">Default</a></li>
                             <li class="divider"></li>
@@ -51,7 +51,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="../help/">Help</a>
+                        <a href="">Help</a>
                     </li>
                 </ul>
             </div>

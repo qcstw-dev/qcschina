@@ -31,9 +31,20 @@ class Product {
     }
 
     public static function getAll() {
-        return Db::getInstance()->get('product');
+        $aProductsObjects = [];
+        $aProducts = Db::getInstance()->get('product');
+        foreach ($aProducts as $aProduct) {
+            $aProductsObjects[] = new Product($aProduct['id']);
+        }
+        return $aProductsObjects;
     }
 
+    public function isDisplayedOnWebsite($iIdWebsite) {
+        $db = Db::getInstance();
+        $db->where('id_product', $this->id);
+        $db->where('id_website', $iIdWebsite);
+        return $db->getValue('product_website','display');
+    }
     public function update($aData) {
         foreach ($aData as $key => $value) {
             if (property_exists($this, $key)) {
@@ -51,13 +62,22 @@ class Product {
             unlink(IMG_PRODUCTS_RELATIVE_DIR . $this->picture);
         }
     }
-
+    
+    public function updateStatusWebsite($iIdWebsite, $iStatus) {
+        $db = Db::getInstance();
+//            $db->where('id_product', $this->id);
+//            $db->where('id_website', $iIdWebsite);
+        return $db->replace('product_website', ['id_product'=> $this->id, 'id_website' => $iIdWebsite, 'display' => $iStatus]);
+    }
+    
     public function delete() {
         $db = Db::getInstance();
         $db->where('id', $this->id);
         $bIsDeleted = $db->delete('product');
         if ($bIsDeleted) {
             $this->deletePicture();
+            $db->where('id', $this->id);
+            $db->delete('product_website');
         }
         return $bIsDeleted;
     }
