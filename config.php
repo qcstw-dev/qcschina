@@ -2,6 +2,10 @@
 
 //phpinfo();die;
 define('SITE_TITLE', 'Qcschina');
+define('SITE_EMAIL', 'maxime.lefevre89@gmail.com');
+define('SITE_EMAIL_BCC', 'mlefevre0789@gmail.com');
+define('RECAPTCHA_SITE_KEY', '6LecpxwUAAAAAG7ZSDy38lhkFMOZmHUrG3bHpKHH');
+define('RECAPTCHA_SECRET', '6LecpxwUAAAAAEaHnpzskXbRqgrFBdwhrQXjRmMH');
 define('ID_WEBSITE', null);
 define('ADMIN_LOGIN', 'qcsasia');
 define('ADMIN_PASSWORD', 'ab119955CD');

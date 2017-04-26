@@ -33,7 +33,7 @@
     <div class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <a href="../" class="navbar-brand"><?= SITE_TITLE ?></a>
+                <a href="<?= BASE_URL ?>" class="navbar-brand"><?= SITE_TITLE ?></a>
                 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>

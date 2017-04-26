@@ -5,6 +5,7 @@
     var baseUrlAdmin = '<?= BASE_URL_ADMIN ?>';
 //    var id_product = <?= (isset($_GET['id_product']) && $_GET['id_product'] ? $_GET['id_product'] : '') ?>;
 </script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script type="text/javascript" src="<?= JS_DIR ?>jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="<?= JS_DIR ?>bootstrap.min.js"></script>
 <script type="text/javascript" src="<?= JS_DIR ?>jquery.magnific-popup.min.js"></script>

@@ -14,6 +14,10 @@ $aRoutes = [
         'controller' => 'controller/about'
     ],
     [
+        'rule' => '/contact-us',
+        'controller' => 'controller/contact_us'
+    ],
+    [
         'rule' => '/xml_feed',
         'controller' => 'controller/xml_feed'
     ],
