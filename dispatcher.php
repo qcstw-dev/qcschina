@@ -13,10 +13,18 @@ $aRoutes = [
         'rule' => '/about',
         'controller' => 'controller/about'
     ],
+    [
+        'rule' => '/xml_feed',
+        'controller' => 'controller/xml_feed'
+    ],
     // ADMIN
     [
         'rule' => '/admin',
         'controller' => 'admin/controller/main'
+    ],
+    [
+        'rule' => '/admin/connect',
+        'controller' => 'admin/controller/connect'
     ],
     [
         'rule' => '/admin/edit-product',

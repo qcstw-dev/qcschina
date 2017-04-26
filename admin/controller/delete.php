@@ -1,5 +1,6 @@
 <?php
 
+include 'admin/controller/checking_connection.php';
 $sMessage = '';
 if (isset($_GET['id_product']) && $_GET['id_product']) {
     $oProduct = new Product($_GET['id_product']);

@@ -8,15 +8,16 @@
     <a href="<?= BASE_URL_ADMIN.'edit-product' ?>" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Add new product</a>
 </div>
 <div class="col-xs-12">
-    <table class="table"><?php
+    <table class="table">
+        <tr><?php
         foreach ($aProducts as $oProduct) {
             /*if ($aProduct->picture) { ?>
                 <div class="pull-left margin-right-20">
                     <img  class="thumbnail margin-bottom-0" src="<?= IMG_PRODUCTS_DIR.$aProduct->picture ?>" width="75px" />
                 </div><?php
             } */?>
-            <td>(ID: <?= $oProduct->id ?>)</td>
-            <td>
+            <td class="padding-top-10 text-center">(ID: <?= $oProduct->id ?>)</td>
+            <td class="padding-top-10">
                 <a href="<?= BASE_URL_ADMIN.'edit-product?id_product='.$oProduct->id ?>"><?= $oProduct->title ?></a>
             </td>
             <!--<td class="text-center">-->
@@ -33,14 +34,14 @@
 <!--                    </ul>
                 </div>-->
             <!--</td>-->
-            <td><?php 
+            <td class="text-right"><?php 
                 if ($oProduct->url) { ?>
                 <a href="<?= $oProduct->url ?>" target="_blank" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-eye-open"></span> URL</a><?php 
                 } ?>
                 <a href="<?= BASE_URL_ADMIN.'edit-product?id_product='.$oProduct->id ?>" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit"></span> Modify</a>
                 <a class="btn btn-danger btn-sm" href="<?= BASE_URL_ADMIN.'delete?id_product='.$oProduct->id ?>"><span class="glyphicon glyphicon-trash"></span> Delete</a>
             </td>
-            <div class="clearfix"></div><?php 
+            </tr><?php 
         } ?>
     </table>
 </div>

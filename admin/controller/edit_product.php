@@ -1,5 +1,6 @@
 <?php
 
+include 'admin/controller/checking_connection.php';
 include 'admin/template/header.php';
 $aWebsites = Website::getAll();
 $oProduct = null;

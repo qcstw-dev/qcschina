@@ -1,7 +1,5 @@
 <?php
-include 'template/header.php'; 
-
-echo 'controller home !';
+include 'template/header.php';
 
 include 'template/home.php';
 

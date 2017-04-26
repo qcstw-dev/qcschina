@@ -42,21 +42,18 @@
             </div>
             <div class="navbar-collapse collapse" id="navbar-main">
                 <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Home <span class="caret"></span></a>
-                        <ul class="dropdown-menu" aria-labelledby="themes">
-                            <li><a href="">Default</a></li>
-                            <li class="divider"></li>
-                            <li><a href="">Test</a></li>
-                        </ul>
+                    <li>
+                        <a href="<?= BASE_URL ?>"><span class="glyphicon glyphicon-home"></span> Home</a>
                     </li>
                     <li>
-                        <a href="">Help</a>
+                        <a href="<?= BASE_URL.'about-us' ?>"><span class="glyphicon glyphicon-info-sign"></span> About us</a>
+                    </li>
+                    <li>
+                        <a href="<?= BASE_URL.'contact-us' ?>"><span class="glyphicon glyphicon-envelope"></span> Contact us</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container">
-        header
 

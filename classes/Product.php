@@ -30,9 +30,14 @@ class Product {
         }
     }
 
-    public static function getAll() {
+    public static function getAll($iIdWebsite = null) {
         $aProductsObjects = [];
-        $aProducts = Db::getInstance()->get('product');
+        $db = Db::getInstance();
+        if ($iIdWebsite) {
+            $db->join('product_website pw', "p.id = pw.id_product", "LEFT");
+            $db->where("pw.id_website", $iIdWebsite);
+        }
+        $aProducts = $db->get('product p');
         foreach ($aProducts as $aProduct) {
             $aProductsObjects[] = new Product($aProduct['id']);
         }

@@ -24,7 +24,7 @@
             <input type="text" class="form-control" name="title" aria-describedby="title" value="<?= ($oProduct && $oProduct->title ? $oProduct->title : '') ?>" autocomplete="off">
         </div>
         <div class="input-group margin-bottom-20">
-            <span class="input-group-addon" id="title">URL</span>
+            <span class="input-group-addon" id="url">URL</span>
             <input type="text" class="form-control" name="url" aria-describedby="url" value="<?= ($oProduct && $oProduct->url ? $oProduct->url : '') ?>" autocomplete="off">
         </div>
         <div class="col-xs-12 col-sm-2 padding-0">
@@ -45,7 +45,7 @@
             <div class="col-xs-12 padding-0 font-size-15 bold margin-bottom-20">Choose the websites where to display the product</div><?php
             foreach ($aWebsites as $oWebsite) { ?>
                 <div class="col-sm-6">
-                    <label class="cursor-pointer"><input type="checkbox" name="website_<?= $oWebsite->id ?>" <?= ($oProduct->isDisplayedOnWebsite($oWebsite->id) ? 'checked' : '') ?>/> <?= $oWebsite->name ?></label>
+                    <label class="cursor-pointer"><input type="checkbox" name="website_<?= $oWebsite->id ?>" <?= ($oProduct && $oProduct->isDisplayedOnWebsite($oWebsite->id) ? 'checked' : '') ?>/> <?= $oWebsite->name.' (ID: '.$oWebsite->id.')' ?></label>
                 </div>
                 <?php
             } ?>

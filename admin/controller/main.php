@@ -1,4 +1,5 @@
 <?php
+include '../admin/controller/checking_connection.php';
 include 'template/header.php'; 
 
 $aProducts = Product::getAll();

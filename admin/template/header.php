@@ -20,7 +20,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-            </div>
+            </div><?php
+            if (isset($_COOKIE['connected']) && $_COOKIE['connected']) { ?>
+                <div class="nav navbar-nav navbar-right">
+                    <a href="<?= BASE_URL_ADMIN.'?disconnect' ?>" class="btn btn-danger margin-top-5"><span class="glyphicon glyphicon-log-out"></span> Log out</a>
+                </div><?php
+            } ?>
         </div>
     </div>
     <div class="panel panel-default col-md-2 vertical-center shadow loading-ajax" style="display: none;">

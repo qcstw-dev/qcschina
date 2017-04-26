@@ -1,3 +1,10 @@
+.home {
+    min-height: 600px;
+}
+.subtitle-pic {
+    height: 36px;
+    overflow: hidden;
+}
 .confirm, .loading-ajax {
     position: fixed;
     top: 50%;
