@@ -16,7 +16,6 @@ if (isset($_POST) && $_POST) {
             $oProduct->updateStatusWebsite(str_replace('website_', '', $key), ($value == 'on' ? 1 : 0 ));
         }
     }
-    
     if (isset($_FILES) && $_FILES) {
         foreach ($_FILES as $file) {
             if ($file['error'] == 0) {

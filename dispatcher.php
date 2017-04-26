@@ -35,6 +35,14 @@ $aRoutes = [
         'controller' => 'admin/controller/edit_product'
     ],
     [
+        'rule' => '/admin/list-about',
+        'controller' => 'admin/controller/list_about'
+    ],
+    [
+        'rule' => '/admin/edit-about',
+        'controller' => 'admin/controller/edit_about'
+    ],
+    [
         'rule' => '/admin/ajax',
         'controller' => 'admin/controller/ajax'
     ],

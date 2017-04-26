@@ -16,5 +16,5 @@
 <script type="text/javascript" src="<?= JS_DIR ?>jquery.fileupload-transport.js"></script>
 <script type="text/javascript" src="<?= JS_DIR ?>jquery.fileupload-image.js"></script>
 <script type="text/javascript" src="<?= JS_DIR ?>global.js"></script>
-<script type="text/javascript" src="<?= JS_DIR ?>back.js"></script>
+<script type="text/javascript" src="<?= ADMIN_JS_DIR ?>back.js"></script>
 </body>

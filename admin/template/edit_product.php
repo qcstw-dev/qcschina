@@ -32,22 +32,21 @@
         </div>
         <div class="col-xs-12 col-sm-2 padding-0">
             <div class="btn btn-default btn-file"><span class="glyphicon glyphicon-upload"></span> Upload
-                <input type="file" name="files">
+                <input type="file" name="files" data-id="<?= $oProduct->id ?>">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-8 padding-top-10 file-name"></div><?php
-        if ($oProduct && $oProduct->picture) { ?>
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 padding-0 thumbnail margin-top-20">
-                <img src="<?= IMG_PRODUCTS_DIR.$oProduct->picture ?>" alt="" title="" />
-            </div><?php
-        }   ?>
+        <div class="col-xs-12 col-sm-8 padding-top-10 file-name-<?= $oProduct->id ?>"></div><?php
+            if ($oProduct && $oProduct->picture) { ?>
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 padding-0 thumbnail margin-top-20">
+                    <img src="<?= IMG_PRODUCTS_DIR.$oProduct->picture ?>" alt="" title="" />
+                </div><?php
+            }   ?>
         <div class="col-xs-12 padding-0">
             <div class="col-xs-12 padding-0 font-size-15 bold margin-bottom-20">Choose the websites where to display the product</div><?php
             foreach ($aWebsites as $oWebsite) { ?>
                 <div class="col-sm-6">
                     <label class="cursor-pointer"><input type="checkbox" name="website_<?= $oWebsite->id ?>" <?= ($oProduct && $oProduct->isDisplayedOnWebsite($oWebsite->id) ? 'checked' : '') ?>/> <?= $oWebsite->name.' (ID: '.$oWebsite->id.')' ?></label>
-                </div>
-                <?php
+                </div><?php
             } ?>
         </div>
         <div class="col-xs-12 padding-0">

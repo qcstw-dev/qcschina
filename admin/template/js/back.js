@@ -8,7 +8,7 @@ $(function () {
 
     $(document).ready(function () {
         $(':file').on('fileselect', function (event, numFiles, label) {
-            $('.file-name').text(label);
+            $('.file-name-'+$(this).data('id')).text(label);
         });
     });
     $('.select-website').on('change', function () {

@@ -20,6 +20,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="<?= BASE_URL_ADMIN ?>" title="Edit products">Edit products</a>
+                    </li>
+                    <li>
+                        <a href="<?= BASE_URL_ADMIN.'list-about' ?>" title="Edit about us pages">Edit about us pages</a>
+                    </li>
+                </ul>
             </div><?php
             if (isset($_COOKIE['connected']) && $_COOKIE['connected']) { ?>
                 <div class="nav navbar-nav navbar-right">

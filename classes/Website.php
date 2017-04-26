@@ -35,6 +35,10 @@ class Website {
         }
         return $aWebsitesObjects;
     }
-    
+    public static function getName($iId) {
+        $db = Db::getInstance();
+        $db->where('id', $iId);
+        return $db->getValue('website', 'name');
+    }
 
 }
