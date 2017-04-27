@@ -10,7 +10,7 @@ $aRoutes = [
         'controller' => 'controller/home'
     ],
     [
-        'rule' => '/about',
+        'rule' => '/about-us',
         'controller' => 'controller/about'
     ],
     [
@@ -20,6 +20,10 @@ $aRoutes = [
     [
         'rule' => '/xml_feed',
         'controller' => 'controller/xml_feed'
+    ],
+    [
+        'rule' => '/xml_feed_about_us',
+        'controller' => 'controller/xml_feed_about_us'
     ],
     // ADMIN
     [

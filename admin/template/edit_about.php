@@ -14,7 +14,7 @@
         </a>
     </div>
     <div class="col-xs-12 padding-0">
-        <div class="bold font-size-20 margin-bottom-20 pull-left">About us <span class="id_product"><?= ($aPage ? 'ID: '.$aPage['id'] : '') ?></span></div>
+        <div class="bold font-size-20 margin-bottom-20 pull-left">About us - <span class="id_product"><?= ($aPage ? 'Website ID: '.$aPage['id_website'] : '') ?></span></div>
     </div>
     <form method="post" enctype="multipart/form-data">
         <input type="hidden" name="id_page" value="<?= ($aPage ? $aPage['id'] : '') ?>">
@@ -53,7 +53,7 @@
                 } ?>
             </select>
         </div>
-        <div class="col-xs-12 padding-0">
+        <div class="col-xs-12 padding-0 margin-bottom-20">
             <button type="submit" class="btn btn-success pull-right"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
         </div>
     </form>
