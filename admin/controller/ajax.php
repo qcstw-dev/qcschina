@@ -20,7 +20,7 @@ if (!isset($_POST['action']) || !$_POST['action']) {
                         $sImageTitle = str_replace(['.jpg', '.png', '.gif'], '', $file['name']);
                         $aResult['image_name'] = $sName;
                         if ($oProduct) {
-                            $oProduct->setPicture($sName);
+                            $oProduct->picture = $sName;
                         } else {
                             $oProduct = new Product(null, ['picture' => $sName]);
                         }

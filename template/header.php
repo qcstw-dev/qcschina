@@ -26,14 +26,18 @@
     <meta property="og:image" content="" />
     <meta property="og:image:width" content="200" />
     <meta property="og:image:height" content="200" />
-    <meta name="description" content=""/>
-    <title>Qcschina</title>
+    <meta name="description" content=""/><?php
+        $response_xml_data_site = file_get_contents(($_SERVER['HTTP_HOST'] == 'localhost' ? BASE_URL : "http://qcschina.com/").'xml_feed_website?website='.(ID_WEBSITE ?: 1));
+        $oXmlObjectSite = simplexml_load_string($response_xml_data_site);
+
+        define('WEBSITE_TITLE', $oXmlObjectSite->website->title); ?>
+    <title><?= WEBSITE_TITLE ?></title>
 </head>
 <body>
     <div class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
-                <a href="<?= BASE_URL ?>" class="navbar-brand"><?= SITE_TITLE ?></a>
+                <a href="<?= BASE_URL ?>" class="navbar-brand"><?= WEBSITE_TITLE ?></a>
                 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>

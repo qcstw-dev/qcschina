@@ -4,7 +4,7 @@
 </div><?php
 } ?>
 <div class="col-xs-12 bold font-size-24 margin-bottom-20">
-    Product list
+    Products list
     <a href="<?= BASE_URL_ADMIN.'edit-product' ?>" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Add new product</a>
 </div>
 <div class="col-xs-12">

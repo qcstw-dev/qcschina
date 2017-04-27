@@ -14,8 +14,10 @@ if ($oXmlObject->page) { ?>
         for ($i = 1; $i <= 4; $i++) {
             $sVarName = 'photo_'.$i;
             if ($oXmlObject->page->{$sVarName}) {?>
-                <div class="col-sm-3 thumbnail">
-                    <img src="<?= $oXmlObject->page->{$sVarName} ?>" alt="about us" title="about us" />
+                <div class="col-sm-3">
+                    <div class="thumbnail">
+                        <img src="<?= $oXmlObject->page->{$sVarName} ?>" alt="about us" title="about us" />
+                    </div>
                 </div><?php
             }
         } ?>

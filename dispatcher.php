@@ -22,6 +22,10 @@ $aRoutes = [
         'controller' => 'controller/xml_feed'
     ],
     [
+        'rule' => '/xml_feed_website',
+        'controller' => 'controller/xml_feed_website'
+    ],
+    [
         'rule' => '/xml_feed_about_us',
         'controller' => 'controller/xml_feed_about_us'
     ],
@@ -37,6 +41,14 @@ $aRoutes = [
     [
         'rule' => '/admin/edit-product',
         'controller' => 'admin/controller/edit_product'
+    ],
+    [
+        'rule' => '/admin/edit-website',
+        'controller' => 'admin/controller/edit_website'
+    ],
+    [
+        'rule' => '/admin/list-website',
+        'controller' => 'admin/controller/list_website'
     ],
     [
         'rule' => '/admin/list-about',

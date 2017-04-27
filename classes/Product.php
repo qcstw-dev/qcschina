@@ -58,10 +58,6 @@ class Product {
         }
     }
 
-    public function setPicture($sPicture) {
-        $this->picture = $sPicture;
-    }
-
     public function deletePicture() {
         if ($this->picture && file_exists(IMG_PRODUCTS_RELATIVE_DIR . $this->picture)) {
             unlink(IMG_PRODUCTS_RELATIVE_DIR . $this->picture);
@@ -70,8 +66,6 @@ class Product {
     
     public function updateStatusWebsite($iIdWebsite, $iStatus) {
         $db = Db::getInstance();
-//            $db->where('id_product', $this->id);
-//            $db->where('id_website', $iIdWebsite);
         return $db->replace('product_website', ['id_product'=> $this->id, 'id_website' => $iIdWebsite, 'display' => $iStatus]);
     }
     
@@ -81,7 +75,7 @@ class Product {
         $bIsDeleted = $db->delete('product');
         if ($bIsDeleted) {
             $this->deletePicture();
-            $db->where('id', $this->id);
+            $db->where('id_product', $this->id);
             $db->delete('product_website');
         }
         return $bIsDeleted;

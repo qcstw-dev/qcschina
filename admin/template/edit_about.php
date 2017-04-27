@@ -1,3 +1,8 @@
+<div class="col-xs-12 padding-0 margin-bottom-10">
+    <a class="btn btn-default pull-left" href="<?= BASE_URL_ADMIN.'list-about' ?>">
+        <span class="glyphicon glyphicon-chevron-left"></span> Back to page list
+    </a>
+</div>
 <div class="col-xs-12 col-sm-7 margin-auto"><?php
     if (isset($aResult['success']) && $aResult['success']) { ?>
         <div class="col-xs-12 padding-0 ">
@@ -8,11 +13,6 @@
             <div class="alert alert-danger text-center"><?= $aResult['error'] ?></div>
         </div><?php
     } ?>
-    <div class="col-xs-12 padding-0 margin-bottom-10">
-        <a class="btn btn-default pull-left" href="<?= BASE_URL_ADMIN.'list-about' ?>">
-            <span class="glyphicon glyphicon-chevron-left"></span> Back to page list
-        </a>
-    </div>
     <div class="col-xs-12 padding-0">
         <div class="bold font-size-20 margin-bottom-20 pull-left">About us - <span class="id_product"><?= ($aPage ? 'Website ID: '.$aPage['id_website'] : '') ?></span></div>
     </div>

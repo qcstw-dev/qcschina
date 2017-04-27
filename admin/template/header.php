@@ -22,6 +22,9 @@
                 </button>
                 <ul class="nav navbar-nav">
                     <li>
+                        <a href="<?= BASE_URL_ADMIN.'list-website' ?>" title="Edit website">Edit websites</a>
+                    </li>
+                    <li>
                         <a href="<?= BASE_URL_ADMIN ?>" title="Edit products">Edit products</a>
                     </li>
                     <li>

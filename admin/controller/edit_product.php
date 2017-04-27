@@ -9,11 +9,11 @@ if (isset($_POST) && $_POST) {
     $oProduct = new Product((isset($_POST['id_product']) && $_POST['id_product'] ? $_POST['id_product'] : null));
     $oProduct->update($_POST);
     $oProduct->save();
-    
+
     // WEBSITES
     foreach ($_POST as $key => $value) {
         if (strpos($key, 'website_') !== false) {
-            $oProduct->updateStatusWebsite(str_replace('website_', '', $key), ($value == 'on' ? 1 : 0 ));
+            $oProduct->updateStatusWebsite(str_replace('website_', '', $key), ($value == 'on' ? 1 : 0));
         }
     }
     if (isset($_FILES) && $_FILES) {
@@ -23,7 +23,7 @@ if (isset($_POST) && $_POST) {
                 $filename = $file['name'];
                 $ext = pathinfo($filename, PATHINFO_EXTENSION);
                 if (in_array($ext, $allowed)) {
-                    $sName = time() . '_' . $oProduct->id.'.'.$ext;
+                    $sName = time() . '_' . $oProduct->id . '.' . $ext;
                     if (move_uploaded_file($file['tmp_name'], IMG_PRODUCTS_RELATIVE_DIR . basename($sName))) {
                         if ($oProduct->picture && file_exists(IMG_PRODUCTS_RELATIVE_DIR . $oProduct->picture)) {
                             unlink(IMG_PRODUCTS_RELATIVE_DIR . $oProduct->picture);
@@ -47,7 +47,7 @@ if (isset($_POST) && $_POST) {
         $oProduct = new Product($_GET['id_product']);
         if (!$oProduct->id) {
             $sMessage = 'This product doesn\'t exist anymore';
-            header('location: '.BASE_URL_ADMIN.'?message='.$sMessage);
+            header('location: ' . BASE_URL_ADMIN . '?message=' . $sMessage);
         }
     }
 }
