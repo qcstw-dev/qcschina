@@ -1,6 +1,6 @@
 <div class="home">
     <h1 class="col-xs-12 font-size-30 margin-top-0"><?= SITE_TITLE ?> products</h1><?php
-    $response_xml_data = file_get_contents(($_SERVER['HTTP_HOST'] == 'localhost' ? BASE_URL : "http://www.qcschina.com/").'xml_feed'.(ID_WEBSITE ? '?website='.ID_WEBSITE : ''));
+    $response_xml_data = file_get_contents(($_SERVER['HTTP_HOST'] == 'localhost' ? BASE_URL : "http://qcschina.com/").'xml_feed'.(ID_WEBSITE ? '?website='.ID_WEBSITE : ''));
     $oXmlObject = simplexml_load_string($response_xml_data);
     if ($oXmlObject->product) { 
         foreach ($oXmlObject->product as $oProduct) { ?>

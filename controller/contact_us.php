@@ -9,7 +9,7 @@ if (isset($_POST['subject'], $_POST['email'], $_POST['message']) && $_POST['subj
         curl_setopt($ch, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array(
-            'response' => Tools::getValue('g-recaptcha-response'),
+            'response' => $_POST['g-recaptcha-response'],
             'secret' => RECAPTCHA_SECRET
         )));
 

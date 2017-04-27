@@ -44,10 +44,14 @@
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="<?= BASE_URL ?>"><span class="glyphicon glyphicon-home"></span> Home</a>
-                    </li>
-                    <li>
-                        <a href="<?= BASE_URL.'about-us' ?>"><span class="glyphicon glyphicon-info-sign"></span> About us</a>
-                    </li>
+                    </li><?php
+                    $response_xml_data = file_get_contents(($_SERVER['HTTP_HOST'] == 'localhost' ? BASE_URL : "http://qcschina.com/").'xml_feed_about_us?website='.(ID_WEBSITE ?: 1));
+                    $oXmlObject = simplexml_load_string($response_xml_data);
+                    if ($oXmlObject->page) { ?>
+                        <li>
+                            <a href="<?= BASE_URL.'about-us' ?>"><span class="glyphicon glyphicon-info-sign"></span> About us</a>
+                        </li><?php
+                    } ?>
                     <li>
                         <a href="<?= BASE_URL.'contact-us' ?>"><span class="glyphicon glyphicon-envelope"></span> Contact us</a>
                     </li>
