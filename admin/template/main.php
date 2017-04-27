@@ -38,7 +38,7 @@
                 if ($oProduct->url) { ?>
                 <a href="<?= $oProduct->url ?>" target="_blank" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-eye-open"></span> URL</a><?php 
                 } ?>
-                <a href="<?= BASE_URL_ADMIN.'edit-product?id_product='.$oProduct->id ?>" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit"></span> Modify</a>
+                <a href="<?= BASE_URL_ADMIN.'edit-product?id_product='.$oProduct->id ?>" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-edit"></span> Modify</a>
                 <a class="btn btn-danger btn-sm" href="<?= BASE_URL_ADMIN.'delete?id_product='.$oProduct->id ?>"><span class="glyphicon glyphicon-trash"></span> Delete</a>
             </td>
             </tr><?php 

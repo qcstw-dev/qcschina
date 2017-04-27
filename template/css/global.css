@@ -1,8 +1,8 @@
 .home {
-    min-height: 600px;
+    /*min-height: 600px;*/
 }
 .subtitle {
-    height: 36px;
+    height: 42px;
     overflow: hidden;
 }
 .confirm, .loading-ajax {
@@ -20,4 +20,10 @@
 }
 .confirm .loader, .loading-ajax .loader{
     background: #fff;
+}
+.table {
+    font-size: 13px;
+}
+.table tr {
+    background: #4e5d6c;
 }

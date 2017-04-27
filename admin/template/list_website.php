@@ -30,7 +30,7 @@
             </td>
             <td class="text-right">
                 <a href="http://<?= $oWebsites->name ?>" target="_blank" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Visit</a>
-                <a href="<?= BASE_URL_ADMIN.'edit-website?id_website='.$oWebsites->id ?>" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit"></span> Modify</a>
+                <a href="<?= BASE_URL_ADMIN.'edit-website?id_website='.$oWebsites->id ?>" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-edit"></span> Modify</a>
                 <a class="btn btn-danger btn-sm" href="<?= BASE_URL_ADMIN.'delete?id_website='.$oWebsites->id ?>"><span class="glyphicon glyphicon-trash"></span> Delete</a>
             </td>
             </tr><?php 

@@ -2,7 +2,7 @@
 <head>
     <meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.0, initial-scale=1.0" /> 
     <link rel="icon" type="image/vnd.microsoft.icon" href="">
-    <link rel="stylesheet" href="<?= CSS_DIR ?>bootstrap.css" media="all">
+    <link rel="stylesheet" href="<?= CSS_DIR ?>bootstrap.min.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>tool-custom-bootstrap.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>magnific-popup.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>global.css" media="all">
@@ -34,7 +34,7 @@
             </div><?php
             if (isset($_COOKIE['connected']) && $_COOKIE['connected']) { ?>
                 <div class="nav navbar-nav navbar-right">
-                    <a href="<?= BASE_URL_ADMIN.'?disconnect' ?>" class="btn btn-danger margin-top-5"><span class="glyphicon glyphicon-log-out"></span> Log out</a>
+                    <a href="<?= BASE_URL_ADMIN.'?disconnect' ?>" class="btn btn-danger btn-sm margin-top-5"><span class="glyphicon glyphicon-log-out"></span> Log out</a>
                 </div><?php
             } ?>
         </div>

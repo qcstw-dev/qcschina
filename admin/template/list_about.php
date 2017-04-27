@@ -6,7 +6,7 @@ if ($aAboutUsPages) { ?>
         foreach ($aAboutUsPages as $aAboutUsPage) { ?>
             <tr>
                 <td class="padding-top-10 padding-left-20"><a href="<?= BASE_URL_ADMIN.'edit-about?id_page='.$aAboutUsPage['id'] ?>"><?= Website::getName($aAboutUsPage['id_website']) ?></a></td>
-                <td class="pull-right"><a href="<?= BASE_URL_ADMIN.'edit-about?id_page='.$aAboutUsPage['id'] ?>" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit"></span> Modify</a></td>
+                <td class="pull-right"><a href="<?= BASE_URL_ADMIN.'edit-about?id_page='.$aAboutUsPage['id'] ?>" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-edit"></span> Modify</a></td>
             </tr><?php
         } ?>
         </table>

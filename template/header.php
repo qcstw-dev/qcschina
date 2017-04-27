@@ -2,7 +2,7 @@
 <head>
     <meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.0, initial-scale=1.0" /> 
     <link rel="icon" type="image/vnd.microsoft.icon" href="">
-    <link rel="stylesheet" href="<?= CSS_DIR ?>bootstrap.css" media="all">
+    <link rel="stylesheet" href="<?= CSS_DIR ?>bootstrap.min.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>tool-custom-bootstrap.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>global.css" media="all">
 <!--    <script>

@@ -24,7 +24,9 @@ hr {
     flex-direction: column;
     justify-content: center;
 }
-
+.background-none {
+    background: none;
+}
 .background-orange {
     color: #fff;
     background: #f0ad4e;
