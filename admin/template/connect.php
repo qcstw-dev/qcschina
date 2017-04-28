@@ -12,9 +12,9 @@
             <span class="input-group-addon" id="password">Password</span>
             <input type="password" class="form-control" name="password" value="" autocomplete="off">
         </div><?php
-//            if ($_SERVER['HTTP_HOST'] != 'localhost') { ?>
+            if ($_SERVER['HTTP_HOST'] != 'localhost') { ?>
                     <div class="g-recaptcha" data-sitekey="<?= RECAPTCHA_SITE_KEY ?>"></div><?php
-//            } ?>
+            } ?>
         <div class="input-group margin-bottom-20 pull-right">
             <button type="submit" class="btn btn-success">Log in</submit>
         </div>

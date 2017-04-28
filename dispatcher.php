@@ -32,7 +32,7 @@ $aRoutes = [
     // ADMIN
     [
         'rule' => '/admin',
-        'controller' => 'admin/controller/main'
+        'controller' => 'admin/controller/list_product'
     ],
     [
         'rule' => '/admin/connect',

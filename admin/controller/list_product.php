@@ -5,6 +5,6 @@ include 'template/header.php';
 $aProducts = Product::getAll();
 $aWebsites = Website::getAll();
 
-include 'template/main.php';
+include 'template/list_product.php';
 
 include 'template/footer.php';

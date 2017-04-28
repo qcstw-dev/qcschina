@@ -15,7 +15,7 @@ class Website {
 
     public $id;
     public $name;
-    public $logo;
+    public $color;
     public $title;
     public $motto;
 
@@ -52,18 +52,18 @@ class Website {
         return $db->getValue('website', 'name');
     }
 
-     public function deleteLogo() {
-        if ($this->logo && file_exists(IMG_LOGO_RELATIVE_DIR . $this->logo)) {
-            unlink(IMG_LOGO_RELATIVE_DIR . $this->logo);
-        }
-    }
+//     public function deleteLogo() {
+//        if ($this->logo && file_exists(IMG_LOGO_RELATIVE_DIR . $this->logo)) {
+//            unlink(IMG_LOGO_RELATIVE_DIR . $this->logo);
+//        }
+//    }
     
     public function delete() {
         $db = Db::getInstance();
         $db->where('id', $this->id);
         $bIsDeleted = $db->delete('website');
         if ($bIsDeleted) {
-            $this->deleteLogo();
+//            $this->deleteLogo();
             $db->where('id_website', $this->id);
             $db->delete('product_website');
         }

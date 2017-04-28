@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="<?= CSS_DIR ?>bootstrap.min.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>tool-custom-bootstrap.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>magnific-popup.css" media="all">
+    <link rel="stylesheet" href="<?= CSS_DIR ?>icon-factory.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>global.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>back.css" media="all">
     <meta name="description" content=""/>
@@ -31,12 +32,13 @@
                         <a href="<?= BASE_URL_ADMIN.'list-about' ?>" title="Edit about us pages">Edit about us pages</a>
                     </li>
                 </ul>
-            </div><?php
-            if (isset($_COOKIE['connected']) && $_COOKIE['connected']) { ?>
-                <div class="nav navbar-nav navbar-right">
-                    <a href="<?= BASE_URL_ADMIN.'?disconnect' ?>" class="btn btn-danger btn-sm margin-top-5"><span class="glyphicon glyphicon-log-out"></span> Log out</a>
-                </div><?php
-            } ?>
+            </div>
+            <div class="nav navbar-nav navbar-right">
+                <a href="<?= BASE_URL ?>" class="btn btn-default btn-sm margin-top-5"><span class="glyphicon glyphicon-globe"></span> qcschina.com</a><?php
+                if (isset($_COOKIE['connected']) && $_COOKIE['connected']) { ?>
+                    <a href="<?= BASE_URL_ADMIN.'?disconnect' ?>" class="btn btn-danger btn-sm margin-top-5"><span class="glyphicon glyphicon-log-out"></span> Log out</a><?php
+                } ?>
+            </div>
         </div>
     </div>
     <div class="panel panel-default col-md-2 vertical-center shadow loading-ajax" style="display: none;">

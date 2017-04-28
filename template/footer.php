@@ -1,7 +1,7 @@
 <div id="footer" class="col-xs-12 padding-10 margin-bottom-10">
     <hr>
-    <div class="col-xs-8">
-        <div class="region region-footer">
+    <div class="col-xs-12">
+        <div class="region region-footer pull-left">
             <div id="block-block-1" class="block block-block">
 
 
@@ -12,11 +12,11 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-xs-4 font-size-13 padding-0 pull-right text-right">
-        <div>Main website: <a href="https://www.qcsasia.com" target="_blank">www.qcsasia.com</a></div>
-        <div>Doming website: <a href="http://doming-stickers.com" target="_blank">doming-stickers.com</a></div>
-        <div>B to C website: <a href="https://www.giftattitude.com" target="_blank">www.giftattitude.com</a></div>
+        <div class="font-size-13 padding-0 pull-right text-left">
+            <div>Main website: <a href="https://www.qcsasia.com" class="underline" target="_blank">www.qcsasia.com</a></div>
+            <div>Doming website: <a href="http://doming-stickers.com" class="underline" target="_blank">doming-stickers.com</a></div>
+            <div>B to C website: <a href="https://www.giftattitude.com" class="underline" target="_blank">www.giftattitude.com</a></div>
+        </div>
     </div>
     <div class="clearfix"></div>
 </div>

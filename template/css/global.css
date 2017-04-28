@@ -1,5 +1,16 @@
-.home {
-    /*min-height: 600px;*/
+.navbar-brand {
+    font-size: 30px;
+    height: auto;
+    padding: 15px;
+}
+.navbar-default .navbar-nav>li>a {
+    padding: 15px;
+}
+.navbar {
+    font-size: 15px;
+}
+strong {
+    font-weight: normal;
 }
 .subtitle {
     height: 42px;

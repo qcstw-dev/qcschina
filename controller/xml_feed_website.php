@@ -8,7 +8,8 @@ if ($aWebsites) {
     foreach ($aWebsites as $oWebsite) {
         $post = $xml->addChild('website');
         $post->addChild('id', $oWebsite->id);
-        $post->addChild('logo', ($_SERVER['HTTP_HOST'] == 'localhost' ? IMG_LOGO_DIR : 'http://www.qcschina.com/'.IMG_LOGO_RELATIVE_DIR).$oWebsite->logo);
+//        $post->addChild('logo', ($_SERVER['HTTP_HOST'] == 'localhost' ? IMG_LOGO_DIR : 'http://www.qcschina.com/'.IMG_LOGO_RELATIVE_DIR).$oWebsite->logo);
+        $post->addChild('color', $oWebsite->color);
         $post->addChild('title', $oWebsite->title);
         $post->addChild('motto', $oWebsite->motto);
     }

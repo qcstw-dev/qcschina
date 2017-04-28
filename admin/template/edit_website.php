@@ -19,7 +19,7 @@
     </div>
     <form method="post" enctype="multipart/form-data">
         <input type="hidden" name="id_website" value="<?= ($oWebsite ? $oWebsite->id: '') ?>">
-        <div class="col-xs-12 col-sm-2 padding-0">
+<!--        <div class="col-xs-12 col-sm-2 padding-0">
             <label>Logo</label>
         </div>
         <div class="col-xs-12 col-sm-2 padding-0 margin-bottom-20">
@@ -28,12 +28,16 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-8 padding-top-10 file-name-1"></div><?php
-        if ($oWebsite && $oWebsite->logo) { ?>
+//        if ($oWebsite && $oWebsite->logo) { ?>
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 padding-0 thumbnail margin-top-20">
                 <img src="<?= IMG_LOGO_DIR.$oWebsite->logo ?>" alt="" title="" />
             </div><?php
-        }   ?>
-        <div class="clearfix"></div>
+//        }   ?>
+        <div class="clearfix"></div>-->
+        <div class="input-group margin-bottom-20">
+            <span class="input-group-addon" id="color">Main color (example: #d9534f)</span>
+            <input type="text" class="form-control" name="color" value="<?= ($oWebsite && $oWebsite->color ? $oWebsite->color : '') ?>" autocomplete="off">
+        </div>
         <div class="input-group margin-bottom-20">
             <span class="input-group-addon" id="name">Name</span>
             <input type="text" class="form-control" name="name" value="<?= ($oWebsite && $oWebsite->name ? $oWebsite->name : '') ?>" autocomplete="off">
