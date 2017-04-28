@@ -1,10 +1,12 @@
 <?php if (isset($_GET['message']) && $_GET['message']) { ?>
-<div class="alert alert-warning text-center">
+<div class="alert alert-info text-center">
     <?= $_GET['message'] ?>
 </div><?php
 } ?>
 <div class="col-xs-12 bold font-size-24 margin-bottom-20">
     Products list
+</div>
+<div class="col-xs-12 margin-bottom-10">
     <a href="<?= BASE_URL_ADMIN.'edit-product' ?>" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Add new product</a>
 </div>
 <div class="col-xs-12">

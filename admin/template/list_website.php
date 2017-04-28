@@ -1,31 +1,33 @@
 <?php if (isset($_GET['message']) && $_GET['message']) { ?>
-<div class="alert alert-warning text-center">
+<div class="alert alert-info text-center">
     <?= $_GET['message'] ?>
 </div><?php
 } ?>
 <div class="col-xs-12 bold font-size-24 margin-bottom-20">
     Websites list
+</div>
+<div class="col-xs-12 margin-bottom-10">
     <a href="<?= BASE_URL_ADMIN.'edit-website' ?>" class="btn btn-success pull-right"><span class="glyphicon glyphicon-plus-sign"></span> Add new website</a>
 </div>
-<div class="col-xs-12">
+<div class="col-xs-12 padding-0">
     <table class="table">
         <tr>
-            <th class="text-center">ID</th>
+            <th class="text-center hidden-xs">ID</th>
             <th>Name</th>
-            <th>Title</th>
-            <th>Motto</th>
-            <th></th>
+            <th class="hidden-xs">Title</th>
+            <th class="hidden-xs">Motto</th>
+            <th>&nbsp;</th>
         </tr>
         <tr><?php
         foreach ($aWebsites as $oWebsites) { ?>
-            <td class="padding-top-10 text-center">(ID: <?= $oWebsites->id ?>)</td>
+            <td class="padding-top-10 text-center hidden-xs">(ID: <?= $oWebsites->id ?>)</td>
             <td class="padding-top-10">
                 <a href="<?= BASE_URL_ADMIN.'edit-website?id_website='.$oWebsites->id ?>"><?= $oWebsites->name ?></a>
             </td>
-            <td class="padding-top-10">
+            <td class="padding-top-10 hidden-xs">
                 <?= $oWebsites->title ?>
             </td>
-            <td class="padding-top-10">
+            <td class="padding-top-10 hidden-xs">
                 <?= $oWebsites->motto ?>
             </td>
             <td class="text-right">

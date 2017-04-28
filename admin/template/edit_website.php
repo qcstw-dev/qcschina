@@ -52,6 +52,7 @@
         </div>
         <div class="col-xs-12 padding-0">
             <button type="submit" class="btn btn-success pull-right"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
+            <button type="submit" name="save_and_quit" class="btn btn-info pull-right margin-right-20"><span class="glyphicon glyphicon-floppy-save"></span> Save and quit</button>
         </div>
     </form>
 </div>

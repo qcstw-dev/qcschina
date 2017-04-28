@@ -14,7 +14,6 @@ if (isset($_GET['id_page']) && $_GET['id_page']) {
 
 if (isset($_POST) && $_POST) {
     if ($_POST['id_website']) {
-
         $aData = [
             'video' => $_POST['video'],
             'text' => $_POST['text'],
@@ -70,6 +69,10 @@ if (isset($_POST) && $_POST) {
                     }
                 }
             }
+        }
+        if (isset($_POST['save_and_quit']) && $aResult['success']) {
+            $sMessage = 'About us page saved !';
+            header('location: '.BASE_URL_ADMIN.'list-about?message='.$sMessage);
         }
     } else {
         $aResult['success'] = false;

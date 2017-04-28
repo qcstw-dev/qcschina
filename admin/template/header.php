@@ -21,6 +21,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="<?= BASE_URL_ADMIN.'list-website' ?>" title="Edit website">Edit websites</a>
@@ -29,15 +31,15 @@
                         <a href="<?= BASE_URL_ADMIN ?>" title="Edit products">Edit products</a>
                     </li>
                     <li>
-                        <a href="<?= BASE_URL_ADMIN.'list-about' ?>" title="Edit about us pages">Edit about us pages</a>
+                        <a href="<?= BASE_URL_ADMIN.'list-about' ?>" title="Edit about us pages">Edit about us</a>
                     </li>
                 </ul>
-            </div>
-            <div class="nav navbar-nav navbar-right">
-                <a href="<?= BASE_URL ?>" class="btn btn-default margin-top-5"><span class="glyphicon glyphicon-globe"></span> qcschina.com</a><?php
-                if (isset($_COOKIE['connected']) && $_COOKIE['connected']) { ?>
-                    <a href="<?= BASE_URL_ADMIN.'?disconnect' ?>" class="btn btn-danger margin-top-5"><span class="glyphicon glyphicon-log-out"></span> Log out</a><?php
-                } ?>
+                <div class="nav navbar-nav navbar-right">
+                    <a href="<?= BASE_URL ?>" class="btn btn-default margin-top-5"><span class="glyphicon glyphicon-globe"></span> qcschina.com</a><?php
+                    if (isset($_COOKIE['connected']) && $_COOKIE['connected']) { ?>
+                        <a href="<?= BASE_URL_ADMIN.'?disconnect' ?>" class="btn btn-danger margin-top-5"><span class="glyphicon glyphicon-log-out"></span> Log out</a><?php
+                    } ?>
+                </div>
             </div>
         </div>
     </div>

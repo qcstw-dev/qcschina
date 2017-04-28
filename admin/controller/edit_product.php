@@ -42,6 +42,10 @@ if (isset($_POST) && $_POST) {
         }
         $oProduct->save();
     }
+    if (isset($_POST['save_and_quit']) && $aResult['success']) {
+        $sMessage = 'Product saved !';
+        header('location: '.BASE_URL_ADMIN.'?message='.$sMessage);
+    }
 } else {
     if (isset($_GET['id_product']) && $_GET['id_product']) {
         $oProduct = new Product($_GET['id_product']);

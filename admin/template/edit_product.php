@@ -27,17 +27,19 @@
             <span class="input-group-addon" id="url">URL</span>
             <input type="text" class="form-control" name="url" value="<?= ($oProduct && $oProduct->url ? $oProduct->url : '') ?>" autocomplete="off">
         </div>
-        <div class="col-xs-12 col-sm-2 padding-0">
-            <label>Picture</label>
-        </div>
-        <div class="col-xs-12 col-sm-2 padding-0">
-            <div class="btn btn-default btn-file"><span class="glyphicon glyphicon-upload"></span> Upload
-                <input type="file" name="files" data-id="1">
+        <div class="col-xs-12 padding-0">
+            <div class="col-xs-12 col-sm-2 padding-0">
+                <label>Picture</label>
+            </div>
+            <div class="col-xs-12 col-sm-2 padding-0">
+                <div class="btn btn-default btn-file"><span class="glyphicon glyphicon-upload"></span> Upload
+                    <input type="file" name="files" data-id="1">
+                </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-8 padding-top-10 file-name-1"></div><?php
             if ($oProduct && $oProduct->picture) { ?>
-                <div class="col-xs-12 col-sm-8 col-sm-offset-2 padding-0 thumbnail margin-top-20">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-2 padding-0 thumbnail margin-top-20">
                     <img src="<?= IMG_PRODUCTS_DIR.$oProduct->picture ?>" alt="" title="" />
                 </div><?php
             }   ?>
@@ -49,8 +51,9 @@
                 </div><?php
             } ?>
         </div>
-        <div class="col-xs-12 padding-0">
+        <div class="col-xs-12 padding-0 margin-top-20 margin-bottom-20">
             <button type="submit" class="btn btn-success pull-right"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
+            <button type="submit" name="save_and_quit" class="btn btn-info pull-right margin-right-20"><span class="glyphicon glyphicon-floppy-save"></span> Save and quit</button>
         </div>
     </form>
 </div>

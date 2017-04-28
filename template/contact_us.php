@@ -18,9 +18,9 @@
             <span class="input-group-addon" id="message">Message</span>
             <textarea class="form-control height-150" name="message"></textarea>
         </div><?php
-//            if ($_SERVER['HTTP_HOST'] != 'localhost') { ?>
+            if ($_SERVER['HTTP_HOST'] != 'localhost') { ?>
                     <div class="g-recaptcha" data-sitekey="<?= RECAPTCHA_SITE_KEY ?>"></div><?php
-//            } ?>
+            } ?>
         <div class="input-group margin-bottom-20 pull-right">
             <button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-send"></span> Send</button>
         </div>
