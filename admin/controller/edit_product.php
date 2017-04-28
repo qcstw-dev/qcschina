@@ -1,7 +1,6 @@
 <?php
-
 include 'admin/controller/checking_connection.php';
-include 'admin/template/header.php';
+
 $aWebsites = Website::getAll();
 $oProduct = null;
 if (isset($_POST) && $_POST) {
@@ -13,7 +12,7 @@ if (isset($_POST) && $_POST) {
     // WEBSITES
     foreach ($_POST as $key => $value) {
         if (strpos($key, 'website_') !== false) {
-            $oProduct->updateStatusWebsite(str_replace('website_', '', $key), ($value == 'on' ? 1 : 0));
+            $oProduct->updateStatusWebsite(str_replace('website_', '', $key), $value);
         }
     }
     if (isset($_FILES) && $_FILES) {
@@ -55,6 +54,8 @@ if (isset($_POST) && $_POST) {
         }
     }
 }
+
+include 'admin/template/header.php';
 
 include 'admin/template/edit_product.php';
 

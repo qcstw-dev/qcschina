@@ -1,7 +1,6 @@
 <?php
 
 include 'admin/controller/checking_connection.php';
-include 'admin/template/header.php';
 $oWebsite = null;
 if (isset($_POST) && $_POST) {
     $aResult = ['success' => true];
@@ -21,6 +20,7 @@ if (isset($_POST) && $_POST) {
         }
     }
 }
+include 'admin/template/header.php';
 
 include 'admin/template/edit_website.php';
 

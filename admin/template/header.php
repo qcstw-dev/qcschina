@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="<?= CSS_DIR ?>icon-factory.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>global.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>back.css" media="all">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="<?= IMG_DIR ?>favicon.ico">
     <meta name="description" content=""/>
-    <title>Qcschina</title>
+    <title>Qcschina Admin</title>
 </head>
 <body>
     <div class="navbar navbar-default">

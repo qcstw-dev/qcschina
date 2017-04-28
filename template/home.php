@@ -4,16 +4,16 @@
     $oXmlObject = simplexml_load_string($response_xml_data);
     if ($oXmlObject->product) { 
         foreach ($oXmlObject->product as $oProduct) { ?>
-            <div class="col-xs-12 col-sm-3">
-                <a href="<?= $oProduct->url ?>" title="<?= $oProduct->title. ' by '.WEBSITE_TITLE ?>">
-                    <div class="col-xs-12 thumbnail">
-                        <div class="col-xs-12 thumbnail margin-bottom-0">
-                            <img src="<?= $oProduct->picture ?>" alt="<?= $oProduct->title. ' by '.WEBSITE_TITLE ?>" title="<?= $oProduct->title. ' by '.WEBSITE_TITLE ?>" />
+                <div class="col-xs-12 col-sm-3">
+                    <a href="<?= $oProduct->url ?>" title="<?= $oProduct->title. ' by '.WEBSITE_TITLE ?>">
+                        <div class="col-xs-12 thumbnail">
+                            <div class="col-xs-12 thumbnail margin-bottom-0">
+                                <img src="<?= $oProduct->picture ?>" alt="<?= $oProduct->title. ' by '.WEBSITE_TITLE ?>" title="<?= $oProduct->title. ' by '.WEBSITE_TITLE ?>" />
+                            </div>
+                            <div class="col-xs-12 font-size-15 text-center subtitle"><strong><?= $oProduct->title ?></strong></div>
                         </div>
-                        <div class="col-xs-12 font-size-15 text-center subtitle"><strong><?= $oProduct->title ?></strong></div>
-                    </div>
-                </a>
-            </div><?php
+                    </a>
+                </div><?php
         }
     } else { ?>
         <div class="col-xs-12">

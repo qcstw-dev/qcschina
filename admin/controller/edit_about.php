@@ -1,7 +1,7 @@
 <?php
 
 include 'admin/controller/checking_connection.php';
-include 'admin/template/header.php';
+
 $aWebsites = Website::getAll();
 $aPage = [];
 $aResult = [];
@@ -79,6 +79,7 @@ if (isset($_POST) && $_POST) {
         $aResult['error'] = 'You have to choose a website';
     }
 }
+include 'admin/template/header.php';
 
 include 'admin/template/edit_about.php';
 

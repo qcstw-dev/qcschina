@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="<?= CSS_DIR ?>tool-custom-bootstrap.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>global.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>icon-factory.css" media="all">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="<?= IMG_DIR ?>favicon.ico">
     <style>
         .logo, .motto, a .thumbnail,
         .navbar-default .navbar-nav>li>a>.glyphicon {

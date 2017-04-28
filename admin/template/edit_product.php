@@ -36,8 +36,8 @@
                     <input type="file" name="files" data-id="1">
                 </div>
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-8 padding-top-10 file-name-1"></div><?php
+            <div class="col-xs-12 col-sm-8 padding-top-10 file-name-1"></div>
+        </div><?php
             if ($oProduct && $oProduct->picture) { ?>
                 <div class="col-xs-12 col-sm-6 col-sm-offset-2 padding-0 thumbnail margin-top-20">
                     <img src="<?= IMG_PRODUCTS_DIR.$oProduct->picture ?>" alt="" title="" />
@@ -47,7 +47,8 @@
             <div class="col-xs-12 padding-0 font-size-15 bold margin-bottom-20 margin-top-20">Choose the websites where to display the product</div><?php
             foreach ($aWebsites as $oWebsite) { ?>
                 <div class="col-sm-6">
-                    <label class="cursor-pointer"><input type="checkbox" name="website_<?= $oWebsite->id ?>" <?= ($oProduct && $oProduct->isDisplayedOnWebsite($oWebsite->id) ? 'checked' : '') ?>/> <?= $oWebsite->name.' (ID: '.$oWebsite->id.')' ?></label>
+                    <input type='hidden' value='0' name='website_<?= $oWebsite->id ?>'>
+                    <label class="cursor-pointer"><input type="checkbox" value="1" name="website_<?= $oWebsite->id ?>" <?= ($oProduct && $oProduct->isDisplayedOnWebsite($oWebsite->id) ? 'checked' : '') ?>/> <?= $oWebsite->name.' (ID: '.$oWebsite->id.')' ?></label>
                 </div><?php
             } ?>
         </div>
