@@ -11,6 +11,33 @@ $(function () {
             $('.file-name-'+$(this).data('id')).text(label);
         });
     });
+    $('.delete-photo').on('click', function () {
+         var data = {};
+        data['action'] = 'deleteaboutphoto';
+        data['id_photo'] = $(this).data('id-photo');
+        data['id_page'] = $(this).data('id-page');
+        $.ajax({
+            type: 'POST',
+            url: baseUrlAdmin + 'ajax',
+            data: data,
+            dataType: 'json',
+            async: false,
+            beforeSend: function () {
+                loading('Deleting...');
+            },
+            success: function (json) {
+                loading_hide();
+                if (json.success === true) {
+                    confirm('Deleted !');
+                    $('.photo-'+json.id_photo).fadeOut('slow');
+                } else {
+                    if (json.error) {
+                        popupError(json.error);
+                    }
+                }
+            }
+        });
+    });
     $('.select-website').on('change', function () {
         var data = {};
         data['action'] = 'selectwebsite';
@@ -29,9 +56,7 @@ $(function () {
             success: function (json) {
                 loading_hide();
                 if (json.success === true) {
-                    // append PICTURE
                     confirm();
-
                 } else {
                     if (json.error) {
                         popupError(json.error);

@@ -4,6 +4,25 @@ if (!isset($_POST['action']) || !$_POST['action']) {
 } else {
     $aResult = [];
     switch ($_POST['action']) {
+        case 'deleteaboutphoto':
+            if (isset($_POST['id_photo'], $_POST['id_page']) 
+                    && $_POST['id_photo'] && $_POST['id_page']) {
+                $db = Db::getInstance();
+                
+                $db->where('id', $_POST['id_page']);
+                $sPhotoName = $db->getValue('page_about_us', 'photo_'.$_POST['id_photo']);
+                unlink(IMG_ABOUT_US_RELATIVE_DIR . $sPhotoName);
+                
+                $db->where('id', $_POST['id_page']);
+                $db->update('page_about_us', ['photo_'.$_POST['id_photo'] => ''], 1);
+                
+                $aResult['success'] = true;
+                $aResult['id_photo'] = $_POST['id_photo'];
+            } else {
+                $aResult['error'] = 'Error: information missing';
+            }
+            
+            break;
         case 'uploadpicture':
             if (isset($_FILES) && $_FILES) {
                 $oProduct = null;

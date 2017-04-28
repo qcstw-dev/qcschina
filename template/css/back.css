@@ -17,3 +17,6 @@
     cursor: inherit;
     display: block;
 }
+.loading-ajax .text {
+    color: #546575;
+}

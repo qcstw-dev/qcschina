@@ -34,9 +34,9 @@
                 </ul>
             </div>
             <div class="nav navbar-nav navbar-right">
-                <a href="<?= BASE_URL ?>" class="btn btn-default btn-sm margin-top-5"><span class="glyphicon glyphicon-globe"></span> qcschina.com</a><?php
+                <a href="<?= BASE_URL ?>" class="btn btn-default margin-top-5"><span class="glyphicon glyphicon-globe"></span> qcschina.com</a><?php
                 if (isset($_COOKIE['connected']) && $_COOKIE['connected']) { ?>
-                    <a href="<?= BASE_URL_ADMIN.'?disconnect' ?>" class="btn btn-danger btn-sm margin-top-5"><span class="glyphicon glyphicon-log-out"></span> Log out</a><?php
+                    <a href="<?= BASE_URL_ADMIN.'?disconnect' ?>" class="btn btn-danger margin-top-5"><span class="glyphicon glyphicon-log-out"></span> Log out</a><?php
                 } ?>
             </div>
         </div>

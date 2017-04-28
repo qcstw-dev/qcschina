@@ -1,3 +1,4 @@
+<h1 class="col-xs-12 font-size-30 margin-top-0"><strong>About us</strong></h1>
 <?php
 $response_xml_data = file_get_contents(($_SERVER['HTTP_HOST'] == 'localhost' ? BASE_URL : "http://qcschina.com/").'xml_feed_about_us?website='.(ID_WEBSITE ?: 1));
 $oXmlObject = simplexml_load_string($response_xml_data);
