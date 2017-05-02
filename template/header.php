@@ -30,19 +30,19 @@
         ga('create', 'UA-85358221-1', 'auto');
         ga('send', 'pageview');
     </script>-->
-    <meta property="og:title" content="" />
+    <meta property="og:title" content="<?= WEBSITE_TITLE ?>" />
     <meta property="og:description" content=""/>
-    <meta property="og:image" content="" />
+    <meta property="og:image" content="<?= IMG_DIR ?>" />
     <meta property="og:image:width" content="200" />
     <meta property="og:image:height" content="200" />
     <meta name="description" content=""/>
     <title><?= WEBSITE_TITLE ?></title>
 </head>
-<body>
+<body <?= ($_SERVER['HTTP_HOST'] != 'localhost' ? 'oncontextmenu="return false"' : '') ?>>
     <div class="container">
         <div class="col-xs-12 padding-0">
             <div class="col-sm-2 padding-0">
-                <div class="logo font-size-150 text-center icon-factory"></div>
+                <a class="logo-link" href="<?= BASE_URL ?>" title="<?= WEBSITE_TITLE ?>"><div class="logo font-size-150 text-center icon-factory"></div></a>
             </div>
             <div class="motto col-sm-10 font-size-30 padding-top-60 hidden-xs"><?= WEBSITE_MOTTO ?></div>
             <div class="motto col-sm-10 text-center font-size-30 visible-xs"><?= WEBSITE_MOTTO ?></div>

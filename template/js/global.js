@@ -1,3 +1,11 @@
+$(function () {
+    $('.btn-more-products').on('click', function () {
+        $(this).remove();
+        $('.btn-more-products-' + (parseInt($(this).data('id')) + 12)).removeClass('hidden');
+        $('.block-more-products-' + $(this).data('id')).removeClass('hidden-products');
+    });
+});
+
 function popupError(error) {
     popupMessage('<div class="glyphicon glyphicon-warning-sign font-size-30 color-red"></div><div class="bold">' + error + '</div>');
 }

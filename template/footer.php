@@ -3,12 +3,11 @@
     <div class="col-xs-12">
         <div class="region region-footer pull-left">
             <div id="block-block-1" class="block block-block">
-
-
                 <div class="content">
-                    <p>© 2016 QCS Asia Co., Ltd. All rights reserved.<br>
-                        5F-8, NO. 63 HEPING E. RD, SEC 3., TAIPEI, TAIWAN<br>
-                        Ph: (886.2)27385787, Fax : (886.2)27385816</p>
+                    <p>QCS Gift Factory 高要市廣星禮品有限公司<br />
+                        D2 DISTRICT, JINDU, GAOYAO CITY, GUANGDONG, CHINA<br />
+                        中國廣東省肇慶高要市金渡鎮D2小區 ZIP: 526108<br />
+                        TEL :(86.758) 8512115 FAX : (86.758) 8512145</p>
                 </div>
             </div>
         </div>
@@ -42,4 +41,5 @@
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script type="text/javascript" src="<?= BASE_URL ?>template/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="<?= BASE_URL ?>template/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?= BASE_URL ?>template/js/global.js"></script>
 </body>

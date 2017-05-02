@@ -36,7 +36,9 @@ class Product {
         if ($iIdWebsite) {
             $db->join('product_website pw', "p.id = pw.id_product", "LEFT");
             $db->where("pw.id_website", $iIdWebsite);
+            $db->where("pw.display", 1);
         }
+        $db->orderBy('id', 'desc');
         $aProducts = $db->get('product p');
         foreach ($aProducts as $aProduct) {
             $aProductsObjects[] = new Product($aProduct['id']);
