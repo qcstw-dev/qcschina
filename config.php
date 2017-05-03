@@ -4,6 +4,7 @@
 define('ID_WEBSITE', 1);
 define('SITE_EMAIL', 'maxime.lefevre89@gmail.com');
 define('SITE_EMAIL_BCC', 'mlefevre0789@gmail.com');
+define('WEBSITE_ANALYTICS_CODE', 'UA-85358221-1');
 define('RECAPTCHA_SITE_KEY', '6LecpxwUAAAAAG7ZSDy38lhkFMOZmHUrG3bHpKHH');
 define('RECAPTCHA_SECRET', '6LecpxwUAAAAAEaHnpzskXbRqgrFBdwhrQXjRmMH');
 define('ADMIN_LOGIN', 'qcsasia');

@@ -13,23 +13,19 @@
         .navbar-default .navbar-nav>li>a>.glyphicon {
             color: <?= $oXmlObjectSite->website->color ? : '#fff' ?>;
         }
-    </style>
-<!--    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    </style><?php
+        if ($_SERVER['HTTP_HOST'] != 'localhost') { ?>
+            <script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-85358221-1', 'auto');
-        ga('send', 'pageview');
-    </script>-->
+              ga('create', '<?= WEBSITE_ANALYTICS_CODE ?>', 'auto');
+              ga('send', 'pageview');
+
+            </script><?php
+        } ?>
     <meta property="og:title" content="<?= WEBSITE_TITLE ?>" />
     <meta property="og:description" content=""/>
     <meta property="og:image" content="<?= IMG_DIR ?>" />
