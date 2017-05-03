@@ -18,6 +18,10 @@ $aRoutes = [
         'controller' => 'controller/contact_us'
     ],
     [
+        'rule' => '/search',
+        'controller' => 'controller/search'
+    ],
+    [
         'rule' => '/xml_feed',
         'controller' => 'controller/xml_feed'
     ],

@@ -59,7 +59,7 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-                <div class="navbar-collapse collapse" id="navbar-main">
+                <div class="navbar-collapse collapse padding-0" id="navbar-main">
                     <ul class="nav navbar-nav">
                         <li>
                             <a href="<?= BASE_URL ?>"><span class="glyphicon glyphicon-home"></span> Home</a>
@@ -75,10 +75,13 @@
                             <a href="<?= BASE_URL.'contact-us' ?>"><span class="glyphicon glyphicon-envelope"></span> Contact us</a>
                         </li>
                     </ul>
+                    <form class="navbar-form navbar-right margin-top-5" method="GET" action="<?= BASE_URL.'search' ?>" autocomplete="off">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="search" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default" style="background: <?= WEBSITE_COLOR ?>"><span class="glyphicon glyphicon-search"></span></button>
+                    </form>
                 </div>
-                
             </div>
         </div>
     </div>
-    <div class="container">
-
