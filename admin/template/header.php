@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="<?= CSS_DIR ?>tool-custom-bootstrap.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>magnific-popup.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>icon-factory.css" media="all">
+    <link rel="stylesheet" href="<?= ADMIN_CSS_DIR ?>jquery-ui.structure.min.css" media="all">
+    <link rel="stylesheet" href="<?= ADMIN_CSS_DIR ?>jquery-ui.theme.min.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>global.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>back.css" media="all">
     <link rel="icon" type="image/vnd.microsoft.icon" href="<?= IMG_DIR ?>favicon.ico">

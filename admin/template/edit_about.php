@@ -20,7 +20,7 @@
         <input type="hidden" name="id_page" value="<?= ($aPage ? $aPage['id'] : '') ?>">
         <div class="input-group margin-bottom-20">
             <span class="input-group-addon" id="video">Video</span>
-            <textarea class="form-control" name="video"><?= (isset($_POST['video']) && $_POST['video'] ? $_POST['video'] : ($aPage ? $aPage['video'] : '')) ?></textarea>
+            <textarea class="form-control height-150" name="video"><?= (isset($_POST['video']) && $_POST['video'] ? $_POST['video'] : ($aPage ? $aPage['video'] : '')) ?></textarea>
         </div>
         <div class="input-group margin-bottom-20">
             <span class="input-group-addon" id="text">Text</span>

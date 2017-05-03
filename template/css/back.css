@@ -17,6 +17,6 @@
     cursor: inherit;
     display: block;
 }
-.loading-ajax .text {
+.loading-ajax .text, .loading-ajax .text {
     color: #546575;
 }

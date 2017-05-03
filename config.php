@@ -13,6 +13,7 @@ define('BASE_URL', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . 
 define('BASE_URL_ADMIN', BASE_URL.'admin/');
 define('CSS_DIR', BASE_URL . 'template/css/');
 define('JS_DIR', BASE_URL . 'template/js/');
+define('ADMIN_CSS_DIR', BASE_URL_ADMIN . 'template/css/');
 define('ADMIN_JS_DIR', BASE_URL_ADMIN . 'template/js/');
 define('IMG_DIR', BASE_URL . 'img/');
 define('IMG_LOGO_DIR', IMG_DIR.'logo/');

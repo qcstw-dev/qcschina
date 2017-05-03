@@ -17,6 +17,7 @@ class Product {
     public $title;
     public $picture;
     public $url;
+    public $order_number;
 
     public function __construct($id = null) {
         if ($id) {
@@ -38,7 +39,7 @@ class Product {
             $db->where("pw.id_website", $iIdWebsite);
             $db->where("pw.display", 1);
         }
-        $db->orderBy('id', 'desc');
+        $db->orderBy('order_number', 'asc');
         $aProducts = $db->get('product p');
         foreach ($aProducts as $aProduct) {
             $aProductsObjects[] = new Product($aProduct['id']);

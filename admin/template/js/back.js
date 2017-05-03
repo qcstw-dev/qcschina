@@ -1,4 +1,37 @@
 $(function () {
+    $('.sortable').sortable({
+        update: function (event, ui) {
+            //create the array that hold the positions...
+            var order = {};
+            //loop trought each li...
+            $('.row-product').each(function (e) {
+                //add each li position to the array...     
+                // the +1 is for make it start from 1 instead of 0
+                order[$(this).attr('id')] = ($(this).index() + 1);
+            });
+            //use the variable as you need!
+            console.log(order);
+            var data = {};
+            data['order'] = order;
+            data['action'] = 'sortproducts';
+            $.ajax({
+                type: 'POST',
+                url: baseUrlAdmin + 'ajax',
+                dataType: 'json',
+                async: true,
+                data: data,
+                beforeSend: function () {
+                    loading('Saving ...');
+                },
+                success: function (json) {
+                    if (json.success) {
+                        loading_hide();
+                    }
+                    return json.success;
+                }
+            });
+        }
+    }).disableSelection();
     $(document).on('change', ':file', function () {
         var input = $(this),
                 numFiles = input.get(0).files ? input.get(0).files.length : 1,

@@ -5,14 +5,16 @@
         $aXmlObject = (array)$oXmlObject;
         $aProducts = (array) $aXmlObject['product'];
         foreach ($aProducts as $key => $oProduct) {
-            if ($key != 0 && $key % 12 == 0 ) { ?>
+            if ($key != 0 && $key % 12 == 0) { ?>
                 <div class="col-xs-12">
-                    <div class="col-xs-12 btn btn-default margin-bottom-10 btn-lg btn-more-products-<?= $key ?> btn-more-products <?= ($key != 12 ? 'hidden' : '') ?>" data-id="<?= $key ?>"><span class="glyphicon glyphicon-refresh"></span> Load more</div>
+                    <div class="col-xs-12 btn btn-default margin-bottom-10 btn-lg btn-more-products-<?= $key ?> btn-more-products <?= ($key != 12 ? 'hidden' : '') ?>" data-id="<?= $key ?>">
+                        <span class="glyphicon glyphicon-plus-sign"></span> Load more products
+                    </div>
                 </div>
                 <div class="block-more-products-<?= $key ?> hidden-products"><?php
             } ?>
                 <div class="col-xs-12 col-sm-3">
-                    <a href="<?= $oProduct->url ?>" title="<?= $oProduct->title. ' by '.WEBSITE_TITLE ?>">
+                    <a href="<?= $oProduct->url ?>?utm_campaign=qcschina_websites&utm_source=<?= WEBSITE_NAME ?>&utm_medium=product_<?= $oProduct->id ?>" title="<?= $oProduct->title. ' by '.WEBSITE_TITLE ?>">
                         <div class="col-xs-12 thumbnail">
                             <div class="col-xs-12 thumbnail margin-bottom-0">
                                 <img src="<?= $oProduct->picture ?>" alt="<?= $oProduct->title. ' by '.WEBSITE_TITLE ?>" title="<?= $oProduct->title. ' by '.WEBSITE_TITLE ?>" />
@@ -21,7 +23,7 @@
                         </div>
                     </a>
                 </div><?php
-            if (($key+1) % 12 == 0) { ?>
+            if ((($key+1) % 12 == 0 && $key != 0) || !isset($aProducts[$key+1])) { ?>
                 </div><?php
             }
         }
