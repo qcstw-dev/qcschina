@@ -12,6 +12,9 @@
                     </div>
                 </div>
             </div>
+            <div class="pull-right thumbnail border-none background-none margin-left-10">
+                    <img src="<?= IMG_DIR ?>sedex.png" alt="sedex" title="sedex">
+            </div>
             <div class="font-size-13 padding-0 pull-right text-left">
                 <div>Main website: <a href="https://www.qcsasia.com?utm_campaign=qcschina_websites&utm_source=<?= WEBSITE_NAME ?>&utm_medium=footer_link" class="underline" target="_blank">www.qcsasia.com</a></div>
                 <div>Doming website: <a href="http://doming-stickers.com?utm_campaign=qcschina_websites&utm_source=<?= WEBSITE_NAME ?>&utm_medium=footer_link" class="underline" target="_blank">doming-stickers.com</a></div>
@@ -20,24 +23,6 @@
         </div>
         <div class="clearfix"></div>
     </div>
-        <div class="clearfix"></div>
-        <div class="margin-bottom-20">
-            <div class="col-xs-offset-2 col-xs-2 thumbnail border-none background-none">
-                <img src="<?= IMG_DIR ?>footer/caefi.jpg" alt="caefi" title="caefi">
-            </div>
-
-            <div class="col-xs-2 thumbnail border-none background-none">
-                <img src="<?= IMG_DIR ?>footer/eppa.jpg" alt="eppa" title="eppa">
-            </div>
-
-            <div class="col-xs-2 thumbnail border-none background-none">
-                <img src="<?= IMG_DIR ?>footer/promota300.jpg" alt="promota" title="promota">
-            </div>
-
-            <div class="col-xs-2 thumbnail border-none background-none">
-                <img src="<?= IMG_DIR ?>footer/sedex_trans.jpg" alt="sedex" title="sedex">
-            </div>
-        </div>
 </div><!-- container -->
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script type="text/javascript" src="<?= BASE_URL ?>template/js/jquery-3.2.1.min.js"></script>
