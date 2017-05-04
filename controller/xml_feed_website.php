@@ -10,8 +10,8 @@ if ($aWebsites) {
         $post->addChild('id', $oWebsite->id);
         $post->addChild('name', $oWebsite->name);
         $post->addChild('color', $oWebsite->color);
-        $post->addChild('title', $oWebsite->title);
-        $post->addChild('motto', $oWebsite->motto);
+        $post->addChild('title', htmlentities($oWebsite->title));
+        $post->addChild('motto', htmlentities($oWebsite->motto));
     }
 }
 header('Content-Type: text/xml; charset=UTF-8');

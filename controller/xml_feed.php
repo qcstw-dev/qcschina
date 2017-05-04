@@ -15,6 +15,9 @@ if ($aProducts) {
         $post->addChild('url', $oProduct->url);
     }
 }
+if (count($aProducts) == 1) {
+    $post = $xml->addChild('product');
+}
 else {
     $post = $xml->addChild('no_product');
     $post->addChild('no_product', 'no_product');

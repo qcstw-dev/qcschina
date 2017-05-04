@@ -28,6 +28,16 @@ define('DB_NAME', 'qcschina');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 
+define('HOME_TITLE', 'Promotional products – QCS china factory');
+define('HOME_DESCRIPTION', 'Custom Gifts & premium for promotional products supplier & distributor. China direct factory promotional products with 100pcs MOQ & rush delivery up to 1000pcs.');
+
+define('ABOUT_TITLE', 'Promotional products – About QCS china factory');
+define('ABOUT_DESCRIPTION', 'Everything about QCS China factory, custom Gifts & premium for promotional products supplier & distributor.');
+
+define('CONTACT_TITLE', 'Promotional products – Contact QCS china factory');
+define('CONTACT_DESCRIPTION', 'Contact QCS China factory, custom Gifts & premium for promotional products supplier & distributor. ');
+
+
 require_once('classes/MysqliDb.php');
 require_once('classes/Db.php');
 require_once('classes/Product.php');

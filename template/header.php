@@ -25,14 +25,25 @@
               ga('send', 'pageview');
 
             </script><?php
+        }
+        $sPageId = 'HOME';
+        switch ($_SERVER['REQUEST_URI']) {
+            case '/about-us':
+                $sPageId = 'ABOUT';
+                break;
+            case '/contact-us':
+                $sPageId = 'CONTACT';
+                break;
+            default:
+                break;
         } ?>
-    <meta property="og:title" content="<?= WEBSITE_TITLE ?>" />
-    <meta property="og:description" content=""/>
+    <meta property="og:title" content="<?= constant($sPageId.'_TITLE') ?>" />
+    <meta property="og:description" content="<?= constant($sPageId.'_DESCRIPTION') ?>"/>
     <meta property="og:image" content="<?= IMG_DIR ?>" />
     <meta property="og:image:width" content="200" />
     <meta property="og:image:height" content="200" />
-    <meta name="description" content=""/>
-    <title><?= WEBSITE_TITLE ?></title>
+    <meta name="description" content="<?= constant($sPageId.'_DESCRIPTION') ?>"/>
+    <title><?= constant($sPageId.'_TITLE') ?></title>
 </head>
 <body <?= ($_SERVER['HTTP_HOST'] != 'localhost' ? 'oncontextmenu="return false"' : '') ?>>
     <div class="container">

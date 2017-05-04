@@ -36,8 +36,10 @@ if (isset($_POST['subject'], $_POST['email'], $_POST['message']) && $_POST['subj
         $aMessage['type'] = 'danger';
         $aMessage['text'] = 'Error: invalid email';
     }
+} else if (isset($_POST['subject'], $_POST['email'], $_POST['message']) && (!$_POST['subject'] || !$_POST['email'] || !$_POST['message'])) {
+    $aMessage['type'] = 'danger';
+    $aMessage['text'] = 'Error: All fields are required';
 }
-
 include 'template/contact_us.php';
 
 include 'template/footer.php';
