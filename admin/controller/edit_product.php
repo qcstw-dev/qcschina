@@ -3,19 +3,18 @@ include 'admin/controller/checking_connection.php';
 
 $aWebsites = Website::getAll();
 $oProduct = null;
-if (isset($_POST) && $_POST) {
+if (isset($_POST['title']) && $_POST['title']) {
     $aResult = ['success' => true];
     $oProduct = new Product((isset($_POST['id_product']) && $_POST['id_product'] ? $_POST['id_product'] : null));
     $oProduct->update($_POST);
-    $oProduct->save();
-
     // WEBSITES
     foreach ($_POST as $key => $value) {
         if (strpos($key, 'website_') !== false) {
             $oProduct->updateStatusWebsite(str_replace('website_', '', $key), $value);
         }
     }
-    if (isset($_FILES) && $_FILES) {
+    $oProduct->save();
+    if (isset($_FILES) && $_FILES && $_FILES['files']['error'] != 4) {
         foreach ($_FILES as $file) {
             if ($file['error'] == 0) {
                 $allowed = array('gif', 'png', 'jpg');
