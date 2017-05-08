@@ -35,4 +35,6 @@ if (in_array($_SESSION['country'], ['CN', 'KR', 'KP', 'IN'])) {
 
 include_once 'config.php';
 
+include_once 'retrieve_website_info.php'; 
+
 include_once 'routing.php';

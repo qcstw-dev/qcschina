@@ -1,16 +1,15 @@
-<?php include 'retrieve_website_info.php'; ?>
 <!DOCTYPE html>
 <head>
     <meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.0, initial-scale=1.0" /> 
     <link rel="stylesheet" href="<?= CSS_DIR ?>bootstrap.min.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>tool-custom-bootstrap.css" media="all">
-    <link rel="stylesheet" href="<?= CSS_DIR ?>global.css" media="all">
+    <link rel="stylesheet" href="<?= MAIN_URL.CSS_RELATIVE_DIR ?>global.css" media="all">
     <link rel="stylesheet" href="<?= CSS_DIR ?>icon-factory.css" media="all">
     <link rel="icon" type="image/vnd.microsoft.icon" href="<?= IMG_DIR ?>favicon.ico">
     <style>
         .logo, .motto, a .thumbnail,
         .navbar-default .navbar-nav>li>a>.glyphicon {
-            color: <?= $oXmlObjectSite->website->color ? : '#fff' ?>;
+            color: <?= WEBSITE_COLOR ? : '#fff' ?>;
         }
     </style><?php
         if ($_SERVER['HTTP_HOST'] != 'localhost') { ?>
@@ -70,9 +69,8 @@
                         <li>
                             <a href="<?= BASE_URL ?>"><span class="glyphicon glyphicon-home"></span> Home</a>
                         </li><?php
-                        $response_xml_data = file_get_contents(($_SERVER['HTTP_HOST'] == 'localhost' ? BASE_URL : "http://qcschina.com/").'xml_feed_about_us?website='.(ID_WEBSITE ?: 1));
-                        $oXmlObject = simplexml_load_string($response_xml_data);
-                        if ($oXmlObject->page) { ?>
+                        $aAboutPage = AboutUsPage::getAboutUsPageByWebsiteId(ID_WEBSITE);
+                        if ($aAboutPage) { ?>
                             <li>
                                 <a href="<?= BASE_URL.'about-us' ?>"><span class="glyphicon glyphicon-info-sign"></span> About us</a>
                             </li><?php
@@ -83,7 +81,7 @@
                     </ul>
                     <form class="navbar-form navbar-right margin-top-5" method="GET" action="<?= BASE_URL.'search' ?>" autocomplete="off">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="search" placeholder="Search">
+                            <input type="text" class="form-control" name="search" placeholder="Search" value="<?= isset($_GET['search']) && $_GET['search'] ? $_GET['search'] : '' ?>">
                         </div>
                         <button type="submit" class="btn btn-default" style="background: <?= WEBSITE_COLOR ?>"><span class="glyphicon glyphicon-search"></span></button>
                     </form>

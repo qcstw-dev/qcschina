@@ -1,12 +1,6 @@
 <div class="container"><?php
-    $response_xml_data = file_get_contents(
-        ($_SERVER['HTTP_HOST'] == 'localhost' ? BASE_URL : "http://qcschina.com/")
-        .'xml_feed'.(ID_WEBSITE != 1 ? '?website='.ID_WEBSITE : ''));
-    $oXmlObject = simplexml_load_string($response_xml_data);
-    
-    if ($oXmlObject->product) {
-        $aXmlObject = (array)$oXmlObject;
-        $aProducts = (array) $aXmlObject['product'];
+    $aProducts = Product::getAll(ID_WEBSITE);
+    if ($aProducts) {
         $aFilteredProducts = [];
         if (isset($_GET['search']) && $_GET['search']) {
             $_GET['search'] = trim($_GET['search']);
@@ -28,7 +22,7 @@
                         <a href="<?= $oProduct->url ?>?utm_campaign=qcschina_websites&utm_source=<?= WEBSITE_NAME ?>&utm_medium=product_<?= $oProduct->id ?>" title="<?= $oProduct->title. ' by '.WEBSITE_TITLE ?>">
                             <div class="col-xs-12 thumbnail">
                                 <div class="col-xs-12 thumbnail margin-bottom-0">
-                                    <img src="<?= $oProduct->picture ?>" alt="<?= $oProduct->title. ' by '.WEBSITE_TITLE ?>" title="<?= $oProduct->title. ' by '.WEBSITE_TITLE ?>" />
+                                    <img src="<?= MAIN_URL.IMG_PRODUCTS_RELATIVE_DIR.$oProduct->picture ?>" alt="<?= $oProduct->title. ' by '.WEBSITE_TITLE ?>" title="<?= $oProduct->title. ' by '.WEBSITE_TITLE ?>" />
                                 </div>
                                 <div class="col-xs-12 font-size-15 text-center subtitle"><strong><?= $oProduct->title ?></strong></div>
                             </div>

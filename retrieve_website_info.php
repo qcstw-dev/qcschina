@@ -1,11 +1,10 @@
 <?php 
-$response_xml_data_site = file_get_contents(($_SERVER['HTTP_HOST'] == 'localhost' ? BASE_URL : "http://qcschina.com/").'xml_feed_website?website='.(ID_WEBSITE ?: 1));
-$oXmlObjectSite = simplexml_load_string($response_xml_data_site);
-if ($oXmlObjectSite) {
-    define('WEBSITE_NAME', $oXmlObjectSite->website->name); 
-    define('WEBSITE_COLOR', $oXmlObjectSite->website->color); 
-    define('WEBSITE_TITLE', $oXmlObjectSite->website->title); 
-    define('WEBSITE_MOTTO', $oXmlObjectSite->website->motto); 
+$oWebsite = new Website(ID_WEBSITE);
+if ($oWebsite) {
+    define('WEBSITE_NAME', $oWebsite->name); 
+    define('WEBSITE_COLOR', $oWebsite->color); 
+    define('WEBSITE_TITLE', $oWebsite->title); 
+    define('WEBSITE_MOTTO', $oWebsite->motto); 
 } else { 
     define('WEBSITE_NAME', $_SERVER['HTTP_HOST']); 
     define('WEBSITE_COLOR', '#ffc107'); 
