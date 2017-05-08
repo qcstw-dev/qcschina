@@ -3,17 +3,17 @@ include 'admin/controller/checking_connection.php';
 
 $aWebsites = Website::getAll();
 $oProduct = null;
-if (isset($_POST['title']) && $_POST['title']) {
+if ((isset($_POST['title']) && $_POST['title']) || (isset($_FILES) && $_FILES && $_FILES['files']['error'] != 4)) {
     $aResult = ['success' => true];
     $oProduct = new Product((isset($_POST['id_product']) && $_POST['id_product'] ? $_POST['id_product'] : null));
     $oProduct->update($_POST);
+    $oProduct->save();
     // WEBSITES
     foreach ($_POST as $key => $value) {
         if (strpos($key, 'website_') !== false) {
             $oProduct->updateStatusWebsite(str_replace('website_', '', $key), $value);
         }
     }
-    $oProduct->save();
     if (isset($_FILES) && $_FILES && $_FILES['files']['error'] != 4) {
         foreach ($_FILES as $file) {
             if ($file['error'] == 0) {
@@ -40,6 +40,7 @@ if (isset($_POST['title']) && $_POST['title']) {
         }
         $oProduct->save();
     }
+    $oProduct->save();
     if (isset($_POST['save_and_quit']) && $aResult['success']) {
         $sMessage = 'Product saved !';
         header('location: '.BASE_URL_ADMIN.'?message='.$sMessage);
