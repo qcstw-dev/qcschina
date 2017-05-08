@@ -1,7 +1,7 @@
 <div class="container"><?php
     $response_xml_data = file_get_contents(
         ($_SERVER['HTTP_HOST'] == 'localhost' ? BASE_URL : "http://qcschina.com/")
-        .'xml_feed?website='.ID_WEBSITE);
+        .'xml_feed'.(ID_WEBSITE != 1 ? '?website='.ID_WEBSITE : ''));
     $oXmlObject = simplexml_load_string($response_xml_data);
     
     if ($oXmlObject->product) {
