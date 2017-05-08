@@ -40,6 +40,7 @@ class Product {
             $db->where("pw.display", 1);
         }
         $db->orderBy('order_number', 'asc');
+        $db->orderBy('id', 'desc');
         $aProducts = $db->get('product p');
         foreach ($aProducts as $aProduct) {
             $aProductsObjects[] = new Product($aProduct['id']);
@@ -90,6 +91,9 @@ class Product {
             $db->where ('id', $this->id);
             return $db->update('product', (array) $this);
         } else {
+            if (!$this->order_number) {
+                $this->order_number = 0;
+            }
             $id = Db::getInstance()->insert('product', (array) $this);
             if ($id) {
                 $this->id = $id;
