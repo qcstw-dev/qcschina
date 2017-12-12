@@ -30,7 +30,7 @@ strong {
     font-weight: normal;
 }
 .subtitle {
-    height: 42px;
+    height: 60px;
     overflow: hidden;
 }
 .confirm, .loading-ajax {

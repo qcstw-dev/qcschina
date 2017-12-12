@@ -5,6 +5,13 @@
 $sMessage = '';
 
 if (isset($_POST['login'], $_POST['password']) && $_POST['login'] && $_POST['password']) {
+    $bIsLocal = true;
+    $whitelist = array(
+        '127.0.0.1',
+        '::1'
+    );
+    if (!in_array($_SERVER['REMOTE_ADDR'], $whitelist)) {
+        $bIsLocal = false;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
     curl_setopt($ch, CURLOPT_POST, 1);
@@ -18,14 +25,8 @@ if (isset($_POST['login'], $_POST['password']) && $_POST['login'] && $_POST['pas
     $server_output = json_decode(curl_exec($ch));
     curl_close($ch);
 
-    $whitelist = array(
-        '127.0.0.1',
-        '::1'
-    );
-    $bIsLocal = true;
-    if (!in_array($_SERVER['REMOTE_ADDR'], $whitelist)) {
-        $bIsLocal = false;
     }
+    
     if (!$bIsLocal && (!$server_output || !$server_output->success)) {
         $sMessage = 'Error: Wrong reCAPTCHA';
     } else {
